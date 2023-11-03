@@ -26,14 +26,20 @@ function App() {
       .catch((err) => console.log(err))
   }
 
-  console.log(currentWeather);
-  console.log(forecast);
-
   return (
     <div className="container">
       <Search onSearchChange={handleOnSearchChange}/>
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <Forecast data={forecast} />}
+      {(!currentWeather && !forecast) ? (
+        <div className="empty-search">
+          <h1>Search City for Weather and Forecast</h1>
+          <img src='home-img.png' alt='weather image' className='weather-image'/>
+        </div>
+      ) : (
+        <>
+          {currentWeather && <CurrentWeather data={currentWeather} />}
+          {forecast && <Forecast data={forecast} />}
+        </>
+      )}
     </div>
   );
 }

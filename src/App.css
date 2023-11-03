@@ -2,3 +2,18 @@
   max-width: 1080px;
   margin: 20px auto;
 }
+
+.empty-search {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 80vh; 
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: #212121;
+}
+
+.weather-image {
+  width: 450px;
+}
